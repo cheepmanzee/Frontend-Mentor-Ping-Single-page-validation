@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+@import 'nullstyle.scss';
+
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.main {
+    .main__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0;
+        text-align: center;
+        .logo {
+            transform: scale(0.8);
+            transform-origin: center center;
+            margin-bottom: 30px;
+            transition: 0.3s ease;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .main__title {
+            font-size: 3rem;
+            color: hsl(0, 0%, 59%);
+            span {
+                color: #000;
+                font-weight: 700;
+            }
+        }
+        .main__subtitle {
+            font-size: 1.2rem;   
+            margin: 20px 0 40px;  
+        }
+        form {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 16px;
+            position: relative;
+            input {
+                font-family: inherit;
+                font-size: 16px;
+                width: 55%;
+                border-radius: 10rem;
+                padding: 14px 30px;
+                outline: none;
+                transition: 0.3s ease;
+                border: 1px solid hsl(223, 100%, 88%);
+                &::placeholder {
+                    color: hsl(223, 100%, 88%);
+                    font-family: inherit;
+                }
+            }
+            button {
+                width: 25%;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                color: #fff;
+                font-weight: 600;
+                border-radius: 10rem;
+                background-color: hsl(223, 87%, 63%);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+                transition: 0.3s ease;
+                &:hover {
+                    opacity: 0.85;
+                }
+            }
+            .error {
+                border-color: hsl(354, 100%, 66%);
+                & ~.error-popup {
+                    opacity: 1;
+                }
+            }
+            .error-popup {
+                transition: 0.3s ease;
+                position: absolute;
+                left: 8.5%;
+                bottom: -40%;
+                color: hsl(354, 100%, 66%);
+                font-size: 12px;
+                font-style: italic;
+                font-weight: 600;
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+        .main__img {
+            margin: 70px 0 100px;
+            img {
+                width: 100%;
+                height: 100%; 
+            }
+        }
+        .main__social {
+            width:150px;
+            display: flex;
+            justify-content: space-evenly;
+            a {
+                border: 1px solid #ddd;
+                border-radius: 10rem;
+                text-decoration: none;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.5s ease;
+                &:hover {
+                    background-color: #517AF4;
+                    border-color: #517AF4;
+                    svg path {
+                        transition: 0.7s ease;
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        .main__copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: hsl(0, 0%, 59%);
+        }
+    }
+}
+
+
+@media (max-width:568px) {
+    body {
+        .main {
+            .main__wrapper {
+                form {
+                    flex-direction: column;
+                    align-items: center;
+                    height: 180px;
+                    input {
+                        width: 70%;
+                    }
+                    button {
+                        width: 70%;
+                        padding: 15px 30px;
+                    }
+                    .error-popup {
+                        width: 100%;
+                        text-align: center;
+                        left: 50%;
+                        top: 78%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
